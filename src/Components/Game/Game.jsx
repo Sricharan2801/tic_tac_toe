@@ -7,7 +7,7 @@ import CrossLogo from "../Logos/CrossLogo"
 import CircleColored from "../Logos/CircleColored"
 import CrossColored from "../Logos/CrossColored"
 import WinningModal from "../Modal/WinningModal"
-
+import RetryLogo from '../Logos/RetryLogo'
 
 
 let winner = "A";
@@ -286,7 +286,7 @@ const Game = ({ turnUpdate }) => {
                     </div>
 
                     <button id='retry-container' onClick={displayModal} >
-                        <img src="/src/Icons/retry.svg" alt="" />
+                        <RetryLogo/>
                     </button>
                 </div>
 
