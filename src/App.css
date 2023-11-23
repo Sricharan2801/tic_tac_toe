@@ -1,0 +1,13 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#Main_Container{
+    width: 100vw;
+    max-width: 1280px;
+    height: 100vh;
+    max-height: 832px;
+    display: flex;
+    gap: 10%;
+}

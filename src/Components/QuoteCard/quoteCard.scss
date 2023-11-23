@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=AR+One+Sans:wght@500&family=DM+Sans:opsz@9..40&family=Inter:wght@300&family=Lato:wght@100&family=Russo+One&family=Ubuntu:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#QuoteCard_Container {
+    width: 25%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+
+    #Quote_Container {
+        width: 290px;
+        height: 282px;
+        background-color: #192A32;
+        border-radius: 18px;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+        #Quote-Container-Heading {
+            color: #31C4BE;
+            font-size: 26px;
+            font-family: DM sans;
+            font-weight: 800;
+        }
+
+        #Quote {
+            width: 190px;
+            color: #f2b237;
+            font-size: 1rem;
+            font-family: DM sans;
+            font-weight: 800;
+        }
+
+        #circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #31C4BE;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #Outer-Square {
+            width: 25px;
+            height: 25px;
+        }
+
+        .Inner-Circle {
+            width: 12.5px;
+            height: 12.5px;
+            background-color: #192A32;
+        }
+
+        #Inner-Circle-2 {
+            margin-left: 12.5px;
+        }
+
+    }
+}

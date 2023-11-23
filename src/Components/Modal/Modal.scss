@@ -1,0 +1,75 @@
+#modal,
+#overlay {
+    width: 25vw;
+    height: 90vh;
+    position: absolute;
+    top: 2.5vh;
+    border-radius: 43px;
+    border-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    #overlay {
+        background: 
+        #000000BA;
+
+    }
+
+    #modalContent {
+
+        width: 100%;
+        height: 30%;
+        background-color: #192A32;
+        
+
+
+        #modal-text {
+            width: 100%;
+            height: 50%;
+            color: #F2B237;
+            font-size: 1.5em;
+            font-family: DM Sans;
+            font-weight: 800;
+           
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #modal-buttons{
+            width: 100%;
+            height: 50%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+
+            .modal-btn{
+                width: 35%;
+                height: 50%;
+                border-radius: 10px;
+                border-style: none;
+                color: #192A32;
+                font-family: DM sans;
+                font-size: 1em;
+                font-weight: 800;
+            }
+
+            #modal-playAgain-btn{
+             background-color: #31c4be;
+            }
+
+            #modal-quit-btn{
+                background-color: #F2B237;
+            }
+
+
+        }
+
+
+
+    }
+
+
+}

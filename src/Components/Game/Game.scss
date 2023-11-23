@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#Game-Container {
+    width: 25%;
+    height: 90%;
+    background-color: #192A32;
+    margin-top: 2.5%;
+    border-radius: 43px;
+    display: flex;
+    align-items: center;
+   
+
+
+    #Game_Display {
+        width: 100%;
+        height: 70%;
+        // background-color: aliceblue;
+
+
+        #details-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+          
+            #game-icons {
+                display: flex;
+                align-items: center;
+                gap: 2px;
+            }
+
+            #turn-container {
+                width: 30%;
+                background-color: #1f3540;
+                border-radius: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10%;
+
+                #current-turn {
+                    color: #a8bec9;
+                }
+            }
+
+            #retry-container {
+                width: 10%;
+                background-color: #a7bdc8;
+                border-radius: 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-style: none;
+
+
+                img {
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+
+        }
+
+
+        #game-space{
+            width: 100%;
+            height: 70%;
+            margin-top: 5%;
+           
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+
+
+            .game-rows{
+                width: 80%;
+                height: 30%;
+                background-color: #192A32;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                gap: 5%;
+
+
+                .game-cards{
+                    width: 30%;
+                    height: 100%;
+                    background-color: #1f3540;
+                    border-style: none;
+                    border-radius: 10px;    
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }  
+        }
+
+        #result-cards-container{
+            width: 80%;
+            height:20%;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            margin-left: 10%;
+
+            .result-cards{
+                width: 30%;
+                height: 80%;
+                border-radius: 10px;
+            }
+
+            #user-result-card{
+                background-color: #31c4be;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                #user{
+                    font-size:0.8em;
+                    font-family: DM sans;
+                }
+                #user-score{
+                    font-size: 1.2em;
+                    font-family: Dm sans;
+                    font-weight: 800;
+                }
+            }
+            #game-tie-card{
+                background-color: #a8bec9;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                #game-tie{
+                    font-size:0.8em;
+                    font-family: DM sans;
+                }
+
+                #game-tie-number{
+                    font-size: 1.2em;
+                    font-family: Dm sans;
+                    font-weight: 800;
+                }
+            }
+            #pc-result-card{
+                background-color: #f2b237;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                #pc{
+                    font-size:0.8em;
+                    font-family: DM sans;
+                }
+
+                #pc-score{
+                    font-size: 1.2em;
+                    font-family: Dm sans;
+                    font-weight: 800;
+                }
+            }
+           
+        }
+
+    }
+}
