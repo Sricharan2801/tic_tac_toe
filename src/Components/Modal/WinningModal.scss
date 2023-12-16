@@ -67,13 +67,14 @@
             #winningModal-quit-btn {
                 background-color: #F2B237;
             }
-
-
         }
-
-
-
     }
+}
 
-
+@media (max-width:600px) {
+    #winningModal,
+    #winningModal-overlay {
+        width: 90%;
+        height: 90%;
+    }
 }

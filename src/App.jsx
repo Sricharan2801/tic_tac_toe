@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import "./App.css"
 import QuoteCard from './Components/QuoteCard/QuoteCard'
 import Game from "./Components/Game/Game"
@@ -8,22 +8,20 @@ import { Routes, Route } from 'react-router-dom'
 
 
 const App = () => {
-  const [pick, setPick] = useState()
+  const [pick, setPick] = useState(JSON.parse(localStorage.getItem("userPick")) || null);
 
 
   const homeData = (input) => {
-
-    localStorage.setItem("pick", input)
-    setPick(localStorage.getItem("pick"))
-
-
+    setPick(input)
+    
   }
 
-
-
-
-
-
+  useEffect(() => {
+    if (pick !== undefined) {
+      localStorage.setItem("userPick", JSON.stringify(pick));
+    }
+  }, [pick]);
+  
   return (
     <section id="Main_Container">
 

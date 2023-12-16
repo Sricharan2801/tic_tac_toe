@@ -67,3 +67,9 @@
 
     }
 }
+
+@media (max-width : 600px){
+    #QuoteCard_Container{
+        display: none;
+    }
+}

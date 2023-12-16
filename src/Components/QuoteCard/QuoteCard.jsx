@@ -15,10 +15,8 @@ const QuoteCard = () => {
             setIntervalId(intervalId + 1)
 
             if (intervalId === 59) {
-                
                 setId(prev => prev + 1)
                 setIntervalId(0)
-                
             }
 
         }, 1000)

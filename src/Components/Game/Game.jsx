@@ -10,39 +10,13 @@ import WinningModal from "../Modal/WinningModal"
 import RetryLogo from '../Logos/RetryLogo'
 
 
-let winner = "A";
+let winner = "";
 
 
-const Game = ({ turnUpdate }) => {
+const Game = () => {
 
-
-
-    // Load selectedOption from localStorage or default to the received prop
-    const [selectedOption, setSelectedOption] = useState(() => {
-        const storedOption = localStorage.getItem('selectedOption');
-        const parsedOption = parseInt(storedOption, 10);
-        return !isNaN(parsedOption) ? parsedOption : (!isNaN(turnUpdate) ? parseInt(turnUpdate, 10) : null);
-    });
-
-    // useEffect to update localStorage when selectedOption changes
-    useEffect(() => {
-        localStorage.setItem('selectedOption', selectedOption);
-    }, [selectedOption]);
-
-    // useEffect to update selectedOption when turnUpdate changes
-    useEffect(() => {
-        const parsedTurnUpdate = parseInt(turnUpdate, 10);
-        setSelectedOption(!isNaN(parsedTurnUpdate) ? parsedTurnUpdate : 1);
-    }, [turnUpdate]);
-
-
-
-
-
-
-
-    // State for userChoice, pcChoice, and currentTurn
-
+   const selectedOption = parseInt(localStorage.getItem("userPick"))
+   
     const [currentTurn, setCurrentTurn] = useState();
 
     // useEffect to update choices and currentTurn when selectedOption changes
@@ -82,11 +56,20 @@ const Game = ({ turnUpdate }) => {
 
     const [validation, setValidation] = useState(Array(9).fill(null))
 
-    const [userScore, setUserScore] = useState(0)
+    const [userScore, setUserScore] = useState(JSON.parse(localStorage.getItem("userScore")))
     const [pcScore, setPcScore] = useState(0)
     const [tie, setTie] = useState(0);
     const [isGameTied, setIsGameTied] = useState(false)
 
+    useEffect(()=>{
+        localStorage.setItem("userScore",userScore)
+        localStorage.setItem("pcScore",pcScore)
+        localStorage.setItem("tie",tie)
+
+       
+    },[userScore,pcScore,tie])
+
+    const userPoints = localStorage.getItem("userScore")
 
     const emptyIndices = (array) => {
         let emptyElements = [];
@@ -111,73 +94,12 @@ const Game = ({ turnUpdate }) => {
     const handleClick = (i) => {
         let copySquares = squares.slice()
 
-        // let indexToBlock = []
-
-
-        //     switch (i) {
-        //         case 0:
-        //             indexToBlock = [3, 4, 1]
-        //             break;
-        //         case 1:
-        //             indexToBlock = [0, 2, 4]
-        //             break;
-        //         case 2:
-        //             indexToBlock = [1, 5, 4]
-        //             break;
-
-        //         case 3:
-        //             indexToBlock = [0, 6, 4]
-        //             break;
-        //         case 4:
-        //             indexToBlock = [1,0,2,6,3,7,8,5]
-        //             break;
-        //         case 5:
-        //             indexToBlock = [2, 8, 4]
-        //             break;
-        //         case 6:
-        //             indexToBlock = [3, 7, 4]
-        //             break;
-        //         case 7:
-        //             indexToBlock = [6, 8, 4]
-        //             break;
-        //         case 8:
-        //             indexToBlock = [5, 7, 4]
-        //             break;
-
-
-        //     }
-
-
-        // console.log(indexToBlock)
-
-        // function checkIndexes(arr, indexes) {
-        //     const results = [];
-
-        //     indexes.forEach((index) => {
-
-        //         if (index >= 0 && index < arr.length) {
-
-
-        //             if (arr[index] === null) {
-        //                 results.push(index)
-        //             }
-        //         }
-        //     });
-
-        //     return results;
-        // }
-
-        // const checkResults = checkIndexes(copySquares, indexToBlock);
-        // console.log("available:", checkResults);
-
-
-
-
         if (squares[i]) {
             return;
         }
 
-
+        
+    
 
         if (selectedOption === 1) {
             copySquares[i] = <CrossColored size={25} />
@@ -194,9 +116,7 @@ const Game = ({ turnUpdate }) => {
                 setTimeout(() => {
 
                     let emptyElements = emptyIndices(copySquares)
-
                     let randomIndex = getRandomIndex(emptyElements)
-                    console.log(randomIndex);
                     copySquares[randomIndex] = <CircleColored size={25} />
                     validation[randomIndex] = "O"
                     setSquares(copySquares)
@@ -269,7 +189,7 @@ const Game = ({ turnUpdate }) => {
     };
 
 
-
+console.log(validation);
 
     return (
         <section id='Game-Container'>
@@ -319,7 +239,7 @@ const Game = ({ turnUpdate }) => {
                     <div id='user-result-card' className="result-cards">
 
                         <p id='user'>(YOU)</p>
-                        <p id='user-score'>{userScore}</p>
+                        <p id='user-score'>{userPoints}</p>
 
                     </div>
                     <div id='game-tie-card' className="result-cards">
@@ -365,8 +285,4 @@ const Game = ({ turnUpdate }) => {
     )
 }
 
-
-
-
-
-export default Game
+export default Game;

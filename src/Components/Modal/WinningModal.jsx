@@ -29,10 +29,8 @@ const WinningModel = ({ validation, closeWincard,
     localStorage.removeItem("userScore")
 
   }
-  console.log(validation);
-  const [winnerLogo, setWinnerLogo] = useState()
 
-  console.log(winner);
+  const [winnerLogo, setWinnerLogo] = useState()
 
 
   useEffect(() => {

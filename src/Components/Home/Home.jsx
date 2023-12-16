@@ -67,13 +67,15 @@ const Home = (props) => {
   
     const navigate = useNavigate()
     const navigateToGame = () => {
-  
+      
+      localStorage.setItem("userScore", JSON.stringify(0));
+      
       if( status === "clickedCross" || status === "clickedCircle"){
         navigate("tic-tac-toe")
+        
       }else{
         toast("please select the option..")
       }
-     
     }
     
     const invite = () => {

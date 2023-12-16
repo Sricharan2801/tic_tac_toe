@@ -7,6 +7,7 @@ const Modal = ({ validation, closeModal, resetGame, text }) => {
     closeModal(false)
     validation(Array(9).fill(null))
     resetGame(Array(9).fill(null))
+    
   }
 
   const navigate = useNavigate()
@@ -14,6 +15,7 @@ const Modal = ({ validation, closeModal, resetGame, text }) => {
     navigate("/")
     validation(Array(9).fill(null))
     resetGame(Array(9).fill(null))
+    localStorage.setItem("userScore",0)
   }
 
 

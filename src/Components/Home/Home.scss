@@ -58,13 +58,6 @@
                 cursor: pointer;
                 
             }
-
-          
-           
-
-
-          
-
            
         }
 
@@ -104,5 +97,12 @@
            cursor: pointer;
         }
        
+    }
+}
+
+@media (max-width : 600px){
+    #Home_Container{
+        width: 90%;
+        margin-left: 5%;
     }
 }
